@@ -6,10 +6,21 @@
   export let duplo: boolean = false;
   export let operacao: boolean = false;
   export let destaque: boolean = false;
+
+  function click() {
+    console.log(click);
+  }
 </script>
 
 <!-- Se o atributo triplo for true, a classe triplo é aplicada -->
-<button class="botao" class:triplo class:duplo class:operacao class:destaque>
+<button
+  class="botao"
+  on:click={click}
+  class:triplo
+  class:duplo
+  class:operacao
+  class:destaque
+>
   {texto}
 </button>
 
