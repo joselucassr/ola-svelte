@@ -3,7 +3,9 @@
 </script>
 
 <main>
-  <Botao />
+  <Botao texto="7" />
+  <Botao texto="8" />
+  <Botao texto="9" />
 </main>
 
 <style>
