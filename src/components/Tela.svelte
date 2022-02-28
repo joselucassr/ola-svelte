@@ -1,5 +1,9 @@
 <script lang="ts">
   export let valor: string;
+
+  // Código não colocado propositalmente,
+  // demonstra uso de condição baseada em valor;
+  // $: tamanhoFonte = valor.length > 20 ? 'pequena' : `s-${tamanhoFonte}`;
 </script>
 
 <div class="tela">
