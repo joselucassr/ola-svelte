@@ -1,9 +1,11 @@
 <script lang="ts">
   import Botao from './Botao.svelte';
   import Linha from './Linha.svelte';
+  import Tela from './Tela.svelte';
 </script>
 
 <div class="calculadora">
+  <Tela valor="12312312312312" />
   <Linha>
     <!-- Passa o atributo triplo como true -->
     <Botao destaque triplo texto="AC" />
@@ -38,8 +40,8 @@
   .calculadora {
     /* Utilizando uma variável */
     background-color: var(--cor-fundo);
-    height: 30vh;
-    width: 20vh;
+    height: 80vh;
+    width: 60vh;
     padding: 10px;
     border-radius: 5px;
 
