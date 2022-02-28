@@ -1,29 +1,22 @@
 <script lang="ts">
+  import CalculadoraModel from '../model/CalculadoraModel';
+
   import Botao from './Botao.svelte';
   import Linha from './Linha.svelte';
   import Tela from './Tela.svelte';
 
-  // Exemplo de forma de lidar com reatividade com um Model
-  class Model {
-    valor: string;
-    constructor(valor: string = '0') {
-      this.valor = valor;
-    }
+  // Inicializando a classe da calculadora
+  let calc = new CalculadoraModel();
 
-    inc() {
-      return new Model(`${parseInt(this.valor) + 1}`);
-    }
-  }
-
-  let obj = new Model();
-
-  function numeroDigitado(numero: string) {
-    obj = obj.inc();
-  }
+  // Armazenando a operação em uma variável para um código mais organizado;
+  // Recebe o valor do botão e inicia um novo objeto, retornado pela função
+  // passando esse valor;
+  const numeroDigitado = (num: string) => (calc = calc.numeroDigitado(num));
 </script>
 
 <div class="calculadora">
-  <Tela valor={obj.valor} />
+  <!-- Pega o valor por meio do get -->
+  <Tela valor={calc.valor} />
   <Linha>
     <!-- Passa o atributo triplo como true -->
     <Botao destaque triplo texto="AC" />
@@ -31,24 +24,24 @@
   </Linha>
   <Linha>
     <Botao texto="7" onClick={numeroDigitado} />
-    <Botao texto="8" />
-    <Botao texto="9" />
+    <Botao texto="8" onClick={numeroDigitado} />
+    <Botao texto="9" onClick={numeroDigitado} />
     <Botao operacao texto="*" />
   </Linha>
   <Linha>
-    <Botao texto="4" />
-    <Botao texto="5" />
-    <Botao texto="6" />
+    <Botao texto="4" onClick={numeroDigitado} />
+    <Botao texto="5" onClick={numeroDigitado} />
+    <Botao texto="6" onClick={numeroDigitado} />
     <Botao operacao texto="+" />
   </Linha>
   <Linha>
-    <Botao texto="1" />
-    <Botao texto="2" />
-    <Botao texto="3" />
+    <Botao texto="1" onClick={numeroDigitado} />
+    <Botao texto="2" onClick={numeroDigitado} />
+    <Botao texto="3" onClick={numeroDigitado} />
     <Botao operacao texto="-" />
   </Linha>
   <Linha>
-    <Botao duplo texto="0" />
+    <Botao duplo texto="0" onClick={numeroDigitado} />
     <Botao texto="," />
     <Botao destaque texto="=" />
   </Linha>
