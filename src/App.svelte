@@ -10,6 +10,7 @@
   /* Mudando o CSS global */
   :global(body) {
     background-color: #282a36;
+    padding: 0;
   }
 
   /* Criando uma variável CSS */
