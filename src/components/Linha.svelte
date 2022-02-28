@@ -5,5 +5,6 @@
 <style>
   .linha {
     display: flex;
+    height: 14vh;
   }
 </style>

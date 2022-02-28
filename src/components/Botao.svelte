@@ -18,6 +18,7 @@
     margin: 0;
     border: 1px solid var(--cor-fundo);
     flex-basis: 25%;
+    font-size: 1.4rem;
   }
 
   .triplo {
