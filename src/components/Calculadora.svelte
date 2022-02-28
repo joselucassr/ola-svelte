@@ -2,17 +2,23 @@
   import Botao from './Botao.svelte';
   import Linha from './Linha.svelte';
   import Tela from './Tela.svelte';
+
+  let valor = '0';
+
+  function numeroDigitado(numero: string) {
+    valor += numero;
+  }
 </script>
 
 <div class="calculadora">
-  <Tela valor="12312312312312" />
+  <Tela {valor} />
   <Linha>
     <!-- Passa o atributo triplo como true -->
     <Botao destaque triplo texto="AC" />
     <Botao operacao texto="/" />
   </Linha>
   <Linha>
-    <Botao texto="7" />
+    <Botao texto="7" onClick={numeroDigitado} />
     <Botao texto="8" />
     <Botao texto="9" />
     <Botao operacao texto="*" />

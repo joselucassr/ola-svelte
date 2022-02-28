@@ -7,15 +7,15 @@
   export let operacao: boolean = false;
   export let destaque: boolean = false;
 
-  function click() {
-    console.log(click);
-  }
+  // Função que é chamada no componente pai passando uma função que recebe
+  // o valor string inciado na tag button;
+  export let onClick: (valor: string) => void = () => {};
 </script>
 
 <!-- Se o atributo triplo for true, a classe triplo é aplicada -->
 <button
   class="botao"
-  on:click={click}
+  on:click={() => onClick(texto)}
   class:triplo
   class:duplo
   class:operacao
