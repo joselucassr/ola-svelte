@@ -3,16 +3,19 @@
   import Linha from './Linha.svelte';
   import Tela from './Tela.svelte';
 
-  // Exemplo de forma de lidar com reatividade com um objeto
-  let obj = {
-    valor: '0',
+  // Exemplo de forma de lidar com reatividade com um Model
+  class Model {
+    valor: string;
+    constructor(valor: string = '0') {
+      this.valor = valor;
+    }
+
     inc() {
-      return {
-        valor: (this.valor = `${parseInt(this.valor) + 1}`),
-        inc: this.inc,
-      };
-    },
-  };
+      return new Model(`${parseInt(this.valor) + 1}`);
+    }
+  }
+
+  let obj = new Model();
 
   function numeroDigitado(numero: string) {
     obj = obj.inc();
