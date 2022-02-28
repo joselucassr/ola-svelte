@@ -6,31 +6,31 @@
 <div class="calculadora">
   <Linha>
     <!-- Passa o atributo triplo como true -->
-    <Botao triplo texto="AC" />
-    <Botao texto="/" />
+    <Botao destaque triplo texto="AC" />
+    <Botao operacao texto="/" />
   </Linha>
   <Linha>
     <Botao texto="7" />
     <Botao texto="8" />
     <Botao texto="9" />
-    <Botao texto="*" />
+    <Botao operacao texto="*" />
   </Linha>
   <Linha>
     <Botao texto="4" />
     <Botao texto="5" />
     <Botao texto="6" />
-    <Botao texto="+" />
+    <Botao operacao texto="+" />
   </Linha>
   <Linha>
     <Botao texto="1" />
     <Botao texto="2" />
     <Botao texto="3" />
-    <Botao texto="-" />
+    <Botao operacao texto="-" />
   </Linha>
   <Linha>
     <Botao duplo texto="0" />
     <Botao texto="," />
-    <Botao texto="=" />
+    <Botao destaque texto="=" />
   </Linha>
 </div>
 
@@ -38,8 +38,10 @@
   .calculadora {
     /* Utilizando uma variável */
     background-color: var(--cor-fundo);
-    height: 60vh;
-    width: 30vh;
+    height: 30vh;
+    width: 20vh;
+    padding: 10px;
+    border-radius: 5px;
 
     display: flex;
     flex-direction: column;
@@ -49,6 +51,8 @@
     .calculadora {
       height: 100vh;
       width: 100vw;
+      padding: 0;
+      border-radius: none;
     }
   }
 </style>
