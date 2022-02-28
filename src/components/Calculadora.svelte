@@ -3,15 +3,24 @@
   import Linha from './Linha.svelte';
   import Tela from './Tela.svelte';
 
-  let valor = '0';
+  // Exemplo de forma de lidar com reatividade com um objeto
+  let obj = {
+    valor: '0',
+    inc() {
+      return {
+        valor: (this.valor = `${parseInt(this.valor) + 1}`),
+        inc: this.inc,
+      };
+    },
+  };
 
   function numeroDigitado(numero: string) {
-    valor += numero;
+    obj = obj.inc();
   }
 </script>
 
 <div class="calculadora">
-  <Tela {valor} />
+  <Tela valor={obj.valor} />
   <Linha>
     <!-- Passa o atributo triplo como true -->
     <Botao destaque triplo texto="AC" />
