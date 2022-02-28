@@ -7,10 +7,13 @@
 </main>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
   /* Mudando o CSS global */
   :global(body) {
     background-color: #282a36;
     padding: 0;
+    font-family: 'Ubuntu Mono', monospace;
   }
 
   /* Criando uma variável CSS */
