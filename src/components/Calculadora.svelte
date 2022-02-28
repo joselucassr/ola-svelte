@@ -9,9 +9,11 @@
   let calc = new CalculadoraModel();
 
   // Armazenando a operação em uma variável para um código mais organizado;
-  // Recebe o valor do botão e inicia um novo objeto, retornado pela função
-  // passando esse valor;
+  // As funções abaixo criam um novo objeto utilizando o
+  // objeto retornado pela função;
   const numeroDigitado = (num: string) => (calc = calc.numeroDigitado(num));
+  const pontoDigitado = () => (calc = calc.pontoDigitado());
+  const limpar = () => (calc = calc.limpar());
 </script>
 
 <div class="calculadora">
@@ -19,7 +21,7 @@
   <Tela valor={calc.valor} />
   <Linha>
     <!-- Passa o atributo triplo como true -->
-    <Botao destaque triplo texto="AC" />
+    <Botao destaque triplo texto="AC" onClick={limpar} />
     <Botao operacao texto="/" />
   </Linha>
   <Linha>
@@ -42,7 +44,7 @@
   </Linha>
   <Linha>
     <Botao duplo texto="0" onClick={numeroDigitado} />
-    <Botao texto="," />
+    <Botao texto="," onClick={pontoDigitado} />
     <Botao destaque texto="=" />
   </Linha>
 </div>

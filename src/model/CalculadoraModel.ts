@@ -1,15 +1,15 @@
-// Constantes para deixar mais descritivo
+// Constantes para deixar mais descritivo;
 const NAO_LIMPAR_TELA = false;
 const LIMPAR_TELA = true;
 
 export default class CalculadoraModel {
-  // # na frente significa que é privado
+  // # na frente significa que é privado;
   #valor: string;
   #acumulador: number;
   #limparTela: boolean;
   #operacao: string;
 
-  // Construtor inicializa os valores
+  // Construtor inicializa os valores;
   constructor(
     valor: string = null,
     acumulador: number = null,
@@ -22,12 +22,12 @@ export default class CalculadoraModel {
     this.#limparTela = limparTela;
   }
 
-  // Retorna o valor substituindo ponto por vírgula
+  // Retorna o valor substituindo ponto por vírgula;
   get valor() {
     return this.#valor?.replace('.', ',') || '0';
   }
 
-  // Função que pega o número digitado e concatena com o valor já presente
+  // Função que pega o número digitado e concatena com o valor já presente;
   numeroDigitado(novoValor: string) {
     return new CalculadoraModel(
       this.#limparTela || !this.#valor ? novoValor : this.#valor + novoValor,
@@ -35,5 +35,20 @@ export default class CalculadoraModel {
       this.#operacao,
       NAO_LIMPAR_TELA,
     );
+  }
+
+  // Função que verifica se já existe um ponto no valor, se não, ela adiciona um;
+  pontoDigitado() {
+    return new CalculadoraModel(
+      this.#valor?.includes('.') ? this.#valor : this.#valor + '.',
+      this.#acumulador,
+      this.#operacao,
+      NAO_LIMPAR_TELA,
+    );
+  }
+
+  // Retorna uma nova instância vazia da calculadora;
+  limpar() {
+    return new CalculadoraModel();
   }
 }
