@@ -1,31 +1,32 @@
 <script lang="ts">
-  import Botao from './components/Botao.svelte';
+  import Calculadora from './components/Calculadora.svelte';
 </script>
 
 <main>
-  <Botao texto="7" />
-  <Botao texto="8" />
-  <Botao texto="9" />
+  <Calculadora />
 </main>
 
 <style>
+  /* Mudando o CSS global */
+  :global(body) {
+    background-color: #282a36;
+  }
+
+  /* Criando uma variável CSS */
+  :root {
+    --cor-fundo: #44475a;
+  }
+
   main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
 
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
-  }
-
-  @media (min-width: 640px) {
+  /* @media (min-width: 640px) {
     main {
       max-width: none;
     }
-  }
+  } */
 </style>
