@@ -51,4 +51,25 @@ export default class CalculadoraModel {
   limpar() {
     return new CalculadoraModel();
   }
+
+  // Função que pega a operação digitada e chama a função de calcular;
+  operacaoDigitada(proximaOperacao: string) {
+    return this.calcular(proximaOperacao);
+  }
+
+  // Função que realiza o calculo, ou não, dependendo da operação anterior digitada;
+  calcular(proximaOperacao: string = null) {
+    const acumulador = !this.#operacao
+      ? parseFloat(this.#valor)
+      : eval(`${this.#acumulador} ${this.#operacao} ${this.#valor}`);
+
+    const valor = !this.#operacao ? this.#valor : `${acumulador}`;
+
+    return new CalculadoraModel(
+      valor,
+      acumulador,
+      proximaOperacao,
+      proximaOperacao ? LIMPAR_TELA : NAO_LIMPAR_TELA,
+    );
+  }
 }
