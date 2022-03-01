@@ -25,7 +25,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    /* Solução encontrada em: https://stackoverflow.com/questions/37112218/css3-100vh-not-constant-in-mobile-browser */
+    min-height: -webkit-fill-available;
+    min-height: 100vh;
   }
 
   /* @media (min-width: 640px) {
