@@ -14,8 +14,6 @@
     background-color: #282a36;
     padding: 0;
     font-family: 'Ubuntu Mono', monospace;
-    position: fixed;
-    height: 100%;
   }
 
   /* Criando uma variável CSS */
@@ -27,8 +25,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    height: 100%;
+    height: 100vh;
   }
 
   /* @media (min-width: 640px) {
